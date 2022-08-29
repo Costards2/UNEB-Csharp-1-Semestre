@@ -1,1 +1,23 @@
+/* Questão 4 do Classroom*/
+using System;
 
+public class cronometro
+{
+    public static void Main(string[] args)
+    {
+        int horas, minutos, segundos, resultado;
+        
+        Console.WriteLine ("Digite a quantidade de Horas");
+        horas = int.Parse(Console.ReadLine());
+        Console.WriteLine ("Digite a quantidade de Minutos");
+        minutos = int.Parse(Console.ReadLine());
+        Console.WriteLine ("Digite a quantidade de Segundos");
+        segundos = int.Parse(Console.ReadLine());
+        
+        resultado = (horas * 3600) + (minutos * 60) + segundos;
+        
+        Console.WriteLine ("Total do tempo em segundos: " + resultado);
+          
+        
+    }
+}
