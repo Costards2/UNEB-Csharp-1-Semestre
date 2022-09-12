@@ -82,22 +82,22 @@ public class HelloWorld
     {
       int diferencaanos, diferencameses, diferenadias, dia1, dia2, mes1, mes2, ano1, ano2;
         Console.WriteLine ("Digite o ano 1: ");
-        ano1 = int.Parse(Console.Readline());
+        ano1 = int.Parse(Console.ReadLine());
         
         Console.WriteLine ("Digite o ano 2: ");
-        ano2 = int.Parse(Console.Readline());
+        ano2 = int.Parse(Console.ReadLine());
         
         Console.WriteLine ("Digite o mes 1: ");
-        mes1 = int.Parse(Console.Readline());
+        mes1 = int.Parse(Console.ReadLine());
         
         Console.WriteLine ("Digite o mes 2: ");
-        mes2 = int.Parse(Console.Readline());
+        mes2 = int.Parse(Console.ReadLine());
         
         Console.WriteLine ("Digite o dia 1: ");
-        dia1 = int.Parse(Console.Readline());
+        dia1 = int.Parse(Console.ReadLine());
         
         Console.WriteLine ("Digite o dia 2: ");
-        dia2 = int.Parse(Console.Readline());
+        dia2 = int.Parse(Console.ReadLine());
         
         diferencaanos = ano1 - ano2;
         diferencameses = ((12 * diferencaanos) + mes2 - mes1);
@@ -106,4 +106,34 @@ public class HelloWorld
         Console.WriteLine("A diferença de anos é: " +diferencaanos);
         Console.WriteLine("A diferença de meses é: " +diferencameses);
         Console.WriteLine("A diferença de dias é: " +diferencadias);
+                            
+                                                                      /* Segunda Lista */
+/* Questão 1 */
+        using System;
 
+namespace myApp
+{ 
+  class questao1
+  {
+    static void Main()
+    {
+        int num1, num2, num3, arit, soma, produto;
+        
+        Console.WriteLine ("Digite seu Primeiro Numero Inteiro : ");
+        num1 = int.Parse(Console.ReadLine());
+        Console.WriteLine ("Digite seu Segundo Numero Inteiro : ");
+        num2 = int.Parse(Console.ReadLine());
+        Console.WriteLine ("Digite seu Terceiro Numero Inteiro : ");
+        num3 = int.Parse(Console.ReadLine());
+        
+        arit = (num1 + num2 + num3)/ 3;
+        soma = num1 + num2 + num3;
+        produto = num1 * num2 * num3;
+        
+        Console.WriteLine("Aritimética: " +arit);
+        Console.WriteLine("Soma: " +soma);
+        Console.WriteLine("Produto: " +produto);     
+    }
+  }
+}
+        
