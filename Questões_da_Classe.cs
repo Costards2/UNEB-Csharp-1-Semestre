@@ -139,17 +139,7 @@ namespace myApp
 
 /* Questão 2 */
         
-        namespace myApp
-{ 
-  class questao2
-  {
-    static void Main()
-    {
-        double inscricao, classe, shorasnormais, shorasextras, horas, shorasnormaisresult;
-        string nome; 
-        
-        Console.WriteLine ("Inscricao : ");
-        inscricaousing System;
+using System;
 
 namespace myApp
 { 
@@ -157,7 +147,7 @@ namespace myApp
   {
     static void Main()
     {
-        double inscricao, classe, shorasnormais, shorasextras, shorasnormaisresult;
+        double inscricao, classe, shorasnormais, shorasextras;
         int horas, horasextras;
         string nome; 
         
@@ -172,8 +162,7 @@ namespace myApp
         Console.WriteLine ("Nome : ");
         nome = (Console.ReadLine());
         
-        shorasnormais = 5 * horas;
-        shorasnormaisresult = (5 * horas) * 1.3 + shorasnormais;
+        shorasnormais = (5 * horas) * 1.3;
         shorasextras = (shorasnormais * 0.3) * horasextras;
         double salariobruto = (shorasnormais * 0.3) + shorasnormais;
         double INSS = salariobruto * 0.11;
@@ -189,4 +178,3 @@ namespace myApp
     }
   }
 }
-        
