@@ -178,3 +178,35 @@ namespace myApp
     }
   }
 }
+
+                                                                      /* Terceira Lista */
+ /* Questão 6 */
+
+using System;
+class propriedade {
+  static void Main() {
+    
+    int idade;
+    
+    Console.WriteLine("Digite a idade: ");
+    idade = int.Parse(Console.ReadLine());
+    
+    if ( idade >= 8 && idade <= 10 ){
+        Console.WriteLine("Sua categoria e infantil B");
+        }else if ( idade >= 11 && idade <= 13 ){
+            Console.WriteLine("Sua categoria e juvenil A");
+            }else if ( idade >= 14 && idade <= 17 ){
+                 Console.WriteLine("Sua categoria e juvenil B");
+                }else if ( idade >= 18){ 
+                    Console.WriteLine("Sua categoria e senior");
+                    }else{ 
+                        Console.WriteLine("Voce neo se encixa em nenhuma das categorias");
+                        }
+    }
+}
+        
+/* Questão 5 */
+        
+        
+        
+        
