@@ -206,6 +206,47 @@ class propriedade {
 }
         
 /* Questão 5 */
+ 
+using System;
+class propriedade {
+  static void Main() {
+    
+    float valor_reais, libra = 0, euro = 0, dolar = 0;
+    int numero;
+    
+    Console.WriteLine("Digite seu valor em reais que voce quer coverter: ");
+    valor_reais = float.Parse(Console.ReadLine());
+    
+    Console.WriteLine("Digite 1 para Dolar, 2 para Libra e 3 para Euro : ");
+    numero = int.Parse(Console.ReadLine());
+    
+    /*if ( numero == 1 ){
+        dolar = valor_reais * 4.00;
+        Console.WriteLine("O valor da conversao e: " + dolar );
+            }else if ( numero == 2 ){
+                libra = valor_reais * 6.15;
+                Console.WriteLine("O valor da conversao e: " + libra );
+                    }else{ 
+                        euro = valor_reais * 4.72;
+                        Console.WriteLine("O valor da conversao e: " + euro );
+                        }*/
+                        
+    switch ( numero ){
+    case 1:
+        dolar = valor_reais * 4.00f;
+        Console.WriteLine("O valor da conversao e: " + dolar );
+        break;
+    case 2:
+        libra = valor_reais * 6.15f;
+        Console.WriteLine("O valor da conversao e: " + libra );
+        break;
+    case 3:
+        euro = valor_reais * 4.72f;
+        Console.WriteLine("O valor da conversao e: " + euro );
+        break;
+        }
+    }
+}
         
         
         
