@@ -247,6 +247,64 @@ class propriedade {
         }
     }
 }
+
+/* Questão 9 */
+        
+using System;
+class notas {
+  static void Main() {
+    
+    int dinheiro, nota1 = 0, nota2 = 0, nota5 = 0, nota10 = 0, nota20 = 0 , nota50 = 0, nota100 = 0;
+    
+    Console.WriteLine("Digite seu dinheiro total : ");
+    dinheiro = int.Parse(Console.ReadLine());
+    
+    if (dinheiro >= 100){
+        nota100 = dinheiro / 100;
+        nota50 = (dinheiro % 100) / 50;
+        nota20 = ((dinheiro % 100) % 50) / 20;
+        nota10 = (((dinheiro % 100) % 50) % 20) / 10;
+        nota5 = ((((dinheiro % 100) % 50) % 20) % 10) / 5;
+        nota2 = (((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2;
+        nota1 =((((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2) / 1;
+    }else if (dinheiro >= 50 && dinheiro < 100){
+        nota50 = dinheiro / 50;
+        nota20 = ((dinheiro % 100) % 50) / 20;
+        nota10 = (((dinheiro % 100) % 50) % 20) / 10;
+        nota5 = ((((dinheiro % 100) % 50) % 20) % 10) / 5;
+        nota2 = (((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2;
+        nota1 =((((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2) / 1;
+    }else if (dinheiro >= 20 && dinheiro < 50){
+        nota20 = dinheiro / 20;
+        nota10 = (((dinheiro % 100) % 50) % 20) / 10;
+        nota5 = ((((dinheiro % 100) % 50) % 20) % 10) / 5;
+        nota2 = (((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2;
+        nota1 =((((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2) / 1;
+    }else if (dinheiro >= 10 && dinheiro < 20){
+        nota10 = dinheiro / 10;
+        nota5 = ((((dinheiro % 100) % 50) % 20) % 10) / 5;
+        nota2 = (((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2;
+        nota1 =((((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2) / 1;
+    }else if (dinheiro >= 5 && dinheiro < 10){
+        nota5 = dinheiro / 5;
+        nota2 = (((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2;
+        nota1 =((((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2) / 1;
+    }else if (dinheiro >= 2 && dinheiro < 5){
+        nota2 = dinheiro / 2;
+        nota1 =((((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2) / 1;
+    }else{ 
+        nota1 = dinheiro / 1;
+    }
+    
+    Console.WriteLine("Notas de 100 : " + nota100);
+    Console.WriteLine("Notas de 50 : " + nota50);
+    Console.WriteLine("Notas de 20 : " + nota20);
+    Console.WriteLine("Notas de 10 : " + nota10);
+    Console.WriteLine("Notas de 5 : "+ nota5);
+    Console.WriteLine("Notas de 2 : " + nota2);
+    Console.WriteLine("Moedas de 1 : " + nota1);
+    }
+}
         
         
         
