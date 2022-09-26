@@ -373,14 +373,16 @@ using System;
     Console.WriteLine("Digite seu dinheiro total : ");
     dinheiro = int.Parse(Console.ReadLine());
     
-    if (dinheiro >= 100){
-        nota100 = dinheiro / 100;
+    if (dinheiro >= 100){                                                
+        //Para fazer essa questão vôce só precisava dessa parte do código :
+        nota100 = dinheiro / 100;                                        
         nota50 = (dinheiro % 100) / 50;
         nota20 = ((dinheiro % 100) % 50) / 20;
         nota10 = (((dinheiro % 100) % 50) % 20) / 10;
         nota5 = ((((dinheiro % 100) % 50) % 20) % 10) / 5;
         nota2 = (((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2;
         nota1 =((((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2) / 1;
+        //Contudo eu fiz essa "complicão para usar If e Else.
     }else if (dinheiro >= 50 && dinheiro < 100){
         nota50 = dinheiro / 50;
         nota20 = ((dinheiro % 100) % 50) / 20;
