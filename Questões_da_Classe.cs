@@ -520,5 +520,32 @@ class lista4_questao3 {
   Console.WriteLine(" O menor valor do conjunto é: " + menor);
  }
 }
+                      
+/* Questão 4 */
+                        
+using System;
+class lista4_questao4 {
+  static void Main() {
+    
+    int N, Nlista, i;
+    
+    Console.WriteLine("Digite seu numero :");
+    N = int.Parse(Console.ReadLine());
+    
+    for(i = Nlista ; i != N;){
+    
+    Console.WriteLine("Digite o numero da lista :");
+    Nlista = int.Parse(Console.ReadLine());
+    
+    if(Nlista == N){
+        Console.WriteLine($"O numero {Nlista} é igual ao primeiro número lido!");
+        
+        }else{ 
+            ($"O numero {Nlista} não é igual ao primeiro número lido!");
+
+      }
+    }
+  }
+}
         
         
