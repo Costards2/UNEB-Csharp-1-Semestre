@@ -382,7 +382,7 @@ using System;
         nota5 = ((((dinheiro % 100) % 50) % 20) % 10) / 5;
         nota2 = (((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2;
         nota1 =((((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2) / 1;
-        //Contudo eu fiz essa "complicão para usar If e Else.
+        //Contudo eu fiz essa "complicação" para usar If e Else.
     }else if (dinheiro >= 50 && dinheiro < 100){
         nota50 = dinheiro / 50;
         nota20 = ((dinheiro % 100) % 50) / 20;
@@ -495,7 +495,30 @@ class lista4_questao2 {
  }
 }
 
-        
-        
+/* Questão 3 */
+                       
+using System;
+class lista4_questao3 {
+  static void Main() {
+    
+    int N;
+    int menor = 1000000; 
+    
+    
+    Console.WriteLine("Digite a qauntidade de numeros do conjunto :");
+    N = int.Parse(Console.ReadLine());
+   
+    for( int i = 1; i <= N; i++){
+    
+    Console.WriteLine($"Digite o seu numero ({i}) :");
+    int numero = int.Parse(Console.ReadLine());
+    
+    if(numero < menor){
+        menor = numero;
+    }
+  }
+  Console.WriteLine(" O menor valor do conjunto é: " + menor);
+ }
+}
         
         
