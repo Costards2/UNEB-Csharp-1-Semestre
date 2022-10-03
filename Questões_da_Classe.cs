@@ -445,6 +445,55 @@ using System;
     Console.WriteLine($"O segundo carro é mais rápido, chegando a velocidade de {velocidade2}m/s");
 } }
 }
+                                                                       /* Segunda Lista */
+
+                          
+/* Questão 1 */
+                          
+using System;
+class lista4_questao1 {
+  static void Main() {
+    
+    int a, b, i;
+    int soma = 0;
+    
+    Console.WriteLine("Digite o numero (a) do intervalo :");
+    a = int.Parse(Console.ReadLine());
+    Console.WriteLine("Digite o numero (b) do intervalo :");
+    b = int.Parse(Console.ReadLine());
+    
+    for(i = a; i <= b; i++){
+        
+        if( i % 2 != 0){
+          soma = soma + i;
+          Console.WriteLine(soma);
+            
+        }
+    }
+    
+    Console.WriteLine("A soma de todos os numeros impares no intervalo é : " + soma);
+ }
+}
+  
+/* Quetão 2 */
+                        
+using System;
+class lista4_questao2 {
+  static void Main() {
+    
+    int N, i;
+    int tabuada;
+    
+    Console.WriteLine("Digite o numero (N) do intervalo :");
+    N = int.Parse(Console.ReadLine());
+    
+    for(i = 0 ; i <= 10; i++){
+        
+        tabuada = N * i;
+          Console.WriteLine($"{N} x {i} = {tabuada}");
+  }
+ }
+}
 
         
         
