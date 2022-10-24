@@ -1,4 +1,5 @@
-\* Quetão 2 *\
+/* Quetão 2 */
+
 using System;
 class questao2 {
   static void Main(string[] args)
@@ -32,7 +33,9 @@ class questao2 {
          
   }
 }
-\* Declarando vc mesmo as variaveis ( A questão não pediu mas...) *\
+
+/* Declarando vc mesmo as variaveis ( A questão não pediu mas...) */
+
 using System;
 class questao2 {
   static void Main(string[] args)
