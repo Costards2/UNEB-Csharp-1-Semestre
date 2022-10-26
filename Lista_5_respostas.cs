@@ -107,7 +107,7 @@ class questao2 {
 /* Questão 3 */
 
 using System;
-class HelloWorld {
+class questão3 {
   static bool Data(int dia, int mes){
     if(dia <= 31 && mes <= 12){
         return true;
