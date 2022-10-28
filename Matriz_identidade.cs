@@ -26,28 +26,25 @@ class HelloWorld {
                 }
                 Console.WriteLine();
             }
-            int soma;
-            soma = 0;
             
-            if (m != n)
-            {
-            Console.WriteLine("Sua matriz não é quadrada, então não possui diagonal, logo não é uma matriz identidade");
-            }
+            int ehidentidade = 1;
             for (i = 1; i <= m; i++)
                 {
- 
                     for (j = 1; j <= n; j++)
                     {
-                        soma = soma + a[i, j];
+                        if ((i == j) && (a[i, j] != 1)){
+                            ehidentidade = 0;
+                        }
+                        else if ((i != j) && (a[i, j] != 0)){
+                            ehidentidade = 0;
+                        }
+                        }
                     }
-                }
-            if (soma / m != 1 )
-            {
-            Console.WriteLine("Sua matriz não é quadrada, então não possui diagonal, logo não é uma matriz identidade");
+                        if (ehidentidade == 1){
+                            Console.WriteLine("Sua matriz é uma matriz identidade");
+                        }
+                        else{
+                        Console.WriteLine("Sua matriz não é quadrada, então não possui diagonal, logo não é uma matriz identidade");
+                        }
             }
-            else
-            {
-            Console.WriteLine("Sua matriz é uma matriz identidade");
-            }
-    } 
-  }
+        }
