@@ -10,6 +10,7 @@ class ApostaLoterica {
     for (k = 0; k< 13; k++) {
                 int posicao = random.Next (0,3);
                     resultado [i,posicao] = 1;
+    }
     
    Console.WriteLine("Para cada jogo, selecione:");
    Console.WriteLine("0 para apostar na vitória da primeira equipe;");
@@ -46,7 +47,6 @@ class ApostaLoterica {
     
     Console.WriteLine("Voçê acertou o resultado de {0} jogo(s).",contador);
     // O programa só imprime o número de acertos
-  // Victor Wang que código maravilhoso!
+  
   }
  }
-}
