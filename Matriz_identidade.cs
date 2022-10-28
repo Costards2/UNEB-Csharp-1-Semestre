@@ -9,7 +9,13 @@ class HelloWorld {
             m = int.Parse(Console.ReadLine());
             Console.WriteLine("Coloque a quantidade de colunas :"); //Maximo 20
             n = int.Parse(Console.ReadLine());
+            
+            if(m != n){
+            Console.WriteLine("Sua matriz não é quadrada, então não possui diagonal, logo não é uma matriz identidade");   
+            }
+            
             Console.WriteLine("Coloque os elementos 1 por 1 :"); //lembrando que é por linha, depois de completar a linha ele vai para proxoma coluna
+            
             for (i = 1; i <= m; i++)
             {
                 for (j = 1; j <= n; j++)
