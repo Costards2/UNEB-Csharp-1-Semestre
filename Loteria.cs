@@ -1,52 +1,90 @@
 using System;
-class ApostaLoterica {
-  static void Main() {
-      
-     int i=0, j=0, k=0, selecao, contador=0; 
-     int[,] aposta=new int[13,3], resultado=new int[13,3];//{{1,0,0},{0,0,1},{0,1,0},{1,0,0},{1,0,0},{1,0,0},{0,1,0},{0,1,0},{0,0,1},{0,0,1},{0,1,0},{0,1,0},{1,0,0}};
-     Random random = new Random();
-     //o professor disse que a gente poria usar o resultado que está na lista, contudo decicir usar o random, mas o código funciona sem ele
+public class HelloWorld {
     
-    for (k = 0; k< 13; k++) {
-                int posicao = random.Next (0,3);
-                    resultado [i,posicao] = 1;
-    }
-    
-   Console.WriteLine("Para cada jogo, selecione:");
-   Console.WriteLine("0 para apostar na vitória da primeira equipe;");
-   Console.WriteLine("1 para apostar em empate;");
-   Console.WriteLine("2 para apostar na vitória da segunda equipe.");
-   
-  //Entrada de apostas
-   while(i<13)
+    static void Introducao ()
     {
-      Console.WriteLine("Para o jogo "+(i+1));
-      Console.WriteLine("Selecione o número correspondente para apostar.");
-      selecao=int.Parse(Console.ReadLine());
-      if ((selecao>=0)&&(selecao<=2)) //Caso o usuário coloque outro número, ele dá inválido
-      {
-        aposta[i,selecao]=1;  
-        i++;
-      }
-      else Console.WriteLine("Seleção inválida.");
+        Console.WriteLine("Para cada jogo, selecione:");
+        Console.WriteLine("0 para apostar na vitória da primeira equipe;");
+        Console.WriteLine("1 para apostar em empate;");
+        Console.WriteLine("2 para apostar na vitória da segunda equipe.");
     }
-    
-    //Comparação com o resultado
-    i=0;
-    while(i<13)
+    static void EntradaAposta (int[,] aposta)
     {
-      while (j<3)
-      {
-        if ((aposta[i,j]==1) && (resultado[i,j]==1)) contador++;
+      int s, k=0; //s é número selecionado pelo usuário
+        while (k<13)
+        {
+            Console.WriteLine("Para o jogo "+(k+1));
+            Console.WriteLine("Selecione o número correspondente para apostar.");
+            s=int.Parse(Console.ReadLine());
+            if ((s>=0)&&(s<=2))
+            {
+                aposta[k,s]=1;  
+                k++;
+            }
+            else Console.WriteLine("Seleção inválida.");
+        }
         
-        j++;
-      } 
-      i++;
-      j=0;
+        Console.WriteLine("Sua aposta:");
+        for (int q = 0; q < 13; q++)
+        {
+        for (int w = 0; w < 3; w++)
+            {
+                Console.Write("\t{0}", aposta[q, w]);
+            }
+            Console.WriteLine();
+        }
+    
+        
     }
     
-    Console.WriteLine("Voçê acertou o resultado de {0} jogo(s).",contador);
-    // O programa só imprime o número de acertos
-  
+    static void Resultado (int [,] resultado)
+    {
+        Random random = new Random();
+        
+        for (int y = 0; y< 13; y++) 
+        {
+        int posicao = random.Next (0,3);
+        resultado [y,posicao] = 1;
+        }
+        
+        Console.WriteLine("\nResultado:");
+        for (int q = 0; q < 13; q++)
+            {
+                for (int w = 0; w < 3; w++)
+                {
+                    Console.Write("\t{0}", resultado[q, w]);
+                }
+            Console.WriteLine();
+        }
+        
+        
+    }
+    
+    static void Comparação (int[,] aposta, int[,] resultado)
+    {
+        int i=0, j=0, contador=0;
+        while(i<13)
+        {
+            while (j<3)
+            {
+                if ((aposta[i,j]==1) && (resultado[i,j]==1)) contador++;
+                j++;
+            } 
+            i++;
+            j=0;
+        }
+        Console.WriteLine("Voçê acertou o resultado de {0} jogo(s).",contador);
+    }
+    
+    
+  static void Main() 
+  {
+
+    int[,] aposta=new int[13,3], resultado=new int[13,3]; //{{1,0,0},{0,0,1},{0,1,0},{1,0,0},{1,0,0},{1,0,0},{0,1,0},{0,1,0},{0,0,1},{0,0,1},{0,1,0},{0,1,0},{1,0,0}};
+    
+    Introducao();//Dá as instruções para o usuário
+    EntradaAposta (aposta);//Lê as apostas do usuário
+    Resultado(resultado);//Cria um resultado randômico
+    Comparação (aposta, resultado);//Compara a aposta com o resultado e imprime os acertos
   }
- }
+}
