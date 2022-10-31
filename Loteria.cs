@@ -5,7 +5,7 @@ class ApostaLoterica {
      int i=0, j=0, k=0, selecao, contador=0; 
      int[,] aposta=new int[13,3], resultado=new int[13,3];//{{1,0,0},{0,0,1},{0,1,0},{1,0,0},{1,0,0},{1,0,0},{0,1,0},{0,1,0},{0,0,1},{0,0,1},{0,1,0},{0,1,0},{1,0,0}};
      Random random = new Random();
-     //o professor disse que a gente poria usar o resultado que está na lista
+     //o professor disse que a gente poria usar o resultado que está na lista, contudo decicir usar o random, mas o código funciona sem ele
     
     for (k = 0; k< 13; k++) {
                 int posicao = random.Next (0,3);
