@@ -56,20 +56,45 @@ namespace SempreEmForma
      IMC = peso / (altura * altura);
      return IMC; 
    }
- 
-    public string TabelaIMC(){
-        double IMC = 0;
-        string tabela = " ";
-        IMC = peso/(altura * altura); 
+   
+   public int Pesomaisoumenos()
+   {
+     double IMC;
+     IMC = peso / (altura * altura);
+     
+     int pesomaisoumenos = 0;
+     
+     if(IMC < 18.5)
+     {
+         pesomaisoumenos = peso + 10;
+     }
+     else if(IMC >= 25)
+     {
+         pesomaisoumenos = peso - 10;
+     }
+     else if(IMC >= 18.5 && IMC < 25)
+     {
+         pesomaisoumenos = peso;
+     }
+     return pesomaisoumenos;
+   }
+
+   public string TabelaIMC(){
         
-        if(IMC < 18.5){
-            return tabela = "BAIXO";
-        }else if(IMC >= 18.5 && IMC < 25){
-            return tabela = "NORMAL";
-        }else if(IMC >= 25){
-            return tabela = "ALTO";
-        }else{
-            return tabela;
+        double IMC = 0;
+        IMC = peso/(altura * altura);
+        
+        if(IMC < 18.5)
+        {
+            return "BAIXO";
+        }
+        else if(IMC >= 18.5 && IMC < 25)
+        {
+            return "NORMAL";
+        }
+        else
+        {
+            return "ALTO";
         }
     }
 
@@ -102,8 +127,11 @@ namespace SempreEmForma
             Console.WriteLine("O peso de {0}", pessoa1.getNome() + " é: " + pessoa1.getPeso()); 
             Console.WriteLine("A altura de {0}", pessoa1.getNome() + " é: " + pessoa1.getAltura()); 
            
-            Console.WriteLine("O IMC de {0}", pessoa1.getNome() + " é: " + pessoa1.resultado()); 
+            Console.WriteLine("O IMC de {0}", pessoa1.getNome() + " é: " + pessoa1.resultado().ToString("F2")); 
             Console.WriteLine("O IMC de {0}", pessoa1.getNome() + " é: " + pessoa1.TabelaIMC());
+            
+            Console.WriteLine("Engordando ou emagrecendo 10 kilos...");
+            Console.WriteLine(pessoa1.getNome() + " pesa " + pessoa1.Pesomaisoumenos(), " Kg agora");
 
         }   catch(Exception erro){ 
             Console.WriteLine("Formato de entrada errado!\n");
