@@ -82,7 +82,7 @@ class q3 {
   }
 }
 
-/* Questão 4 */
+/* Questão 4 */ //ainda fazendo
 using System;
 class q4 {
   static void Main() {
