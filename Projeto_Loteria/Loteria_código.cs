@@ -88,3 +88,16 @@ public class HelloWorld {
     Comparação (aposta, resultado);//Compara a aposta com o resultado e imprime os acertos
   }
 }
+/*
+Forma de imprimir a Matriz
+ int[,] matrizresultado = new int[13,3]{{ 0,0,1 }, { 1,0,0 }, { 1,0,0 }, { 0,0,1 }, { 0,0,1 }, { 0,1,0 }, { 0,0,1 }, { 1,0,0 }, { 1,0,0 }, { 0,1,0}, { 0,0,1 }, { 0,1,0 }, { 0,0,1 }};
+    int i = 0, j =0;
+         for(i = 0; i < 13; i++){
+          for(j = 0; j < 3; j++){
+            Console.Write("{0}\t", matrizresultado[i,j]);
+          }
+          Console.Write("\n");
+        }
+  }
+}
+*/
