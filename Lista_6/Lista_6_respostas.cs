@@ -113,7 +113,42 @@ class q4 {
           Console.WriteLine("Os valores não estão em oredem crescente, digite novamente.");
           vetor2[i] = float.Parse(Console.ReadLine());
         }        
+      }
+    }
+  }
+
+/* Questão  5 */
+using System;
+class q5 {
+  static void Main() {
+      
+    int[] vetor = new int[10];
+    int i = 0;
+    int N = 0;
+    int existe = 0;
+    
+    for(i = 0; i < 10; i++)
+    {
+        Console.WriteLine("Digite seus 10 valores do vetor, sendo esse o seu {0}° valor: ", i + 1);
+        vetor[i] = int.Parse(Console.ReadLine());
+    }
+    
+    Console.WriteLine("\nDigite o valor N para verificar se ele se encontra no vetor: ");
+    N = int.Parse(Console.ReadLine());
+    
+    for(i = 0; i < 10; i++)
+    {
+        if( vetor[i] == N )
+        {
+            Console.WriteLine("\nO valor {0} foi encontarndo na posição {1}° do vetor.", N, i + 1);
+            existe++;
+        }
+    }
+    
+    if (existe == 0)
+    {
+        Console.WriteLine("O valor não foi encontrado dentro do vetor.");
     }
 
- }
-}   
+  }
+}
