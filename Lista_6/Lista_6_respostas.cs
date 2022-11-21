@@ -16,6 +16,7 @@ class q1 {
     Console.WriteLine($"O resultado das multiplicaçoes é: {multiplicaçao} ");
   }
 }
+
 /* Questão 2 */
 using System;
 class q2 {
@@ -44,5 +45,39 @@ class q2 {
     {
     Console.WriteLine("Os valores do vetor C são: {0} ", vetorC[i]);
     }
+  }
+}
+
+/* Questão 3 */
+using System;
+class q3 {
+  static void Main() {
+    
+    float[] salarios = new float[5]; //São 50 funcionario na questao, mas para o código não ficar imenso usarei 5
+   
+    int i = 0;
+    float media = 0;
+    float soma = 0;
+    int acima = 0;
+    for(i = 0; i < 5; i++)
+    {
+    Console.WriteLine("Digite o valor do salario do seu {0}° funcionario ", i + 1);
+    salarios[i] = float.Parse(Console.ReadLine());
+    
+    soma = soma + salarios[i];
+    }
+    
+    media = soma / 5;
+    
+     for(i = 0; i < 5; i++)
+    {
+        if( salarios[i] > media)
+        {
+        acima++;
+        }
+    }
+    
+    Console.WriteLine($"Existem {acima} funcionários que ganham salário acima da média!");
+    
   }
 }
