@@ -149,6 +149,43 @@ class q5 {
     {
         Console.WriteLine("O valor não foi encontrado dentro do vetor.");
     }
-
   }
 }
+
+/* Questão 6 */ //ainda sendo feit
+//#define N 5
+using System;
+class q5 {
+  static void Main() {
+     
+    int i = 0, j = 0, N = 5; 
+    int[] vetor1 = new int[N]; // A questão fala até 10 numeros, por isso usarei 5
+    int[] vetor2 = new int[N];
+    int[] vetor3 = new int[N];
+    
+    for(i = 0; i < N; i++)
+    {
+        Console.WriteLine("Digite seus {0} valores do vetor, sendo esse o seu {1}° valor: ", N,  i + 1);
+        vetor1[i] = int.Parse(Console.ReadLine());
+        
+        vetor3[i] = vetor1[i];
+    }
+    
+    for(i = 0; i < N; i++)
+    {
+        for(j = 0; j < N; j++)
+        {
+            if( vetor1[i] == vetor3[j] )
+            {
+                vetor3[j] = 0;
+            }
+        }
+        
+        vetor2[i] = vetor3[i];
+        
+        Console.WriteLine("{0}\t", vetor2[i]);
+        
+    }
+  }
+}
+
