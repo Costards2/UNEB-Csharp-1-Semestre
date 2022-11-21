@@ -81,3 +81,39 @@ class q3 {
     
   }
 }
+
+/* Questão 4 */
+using System;
+class q4 {
+  static void Main() {
+    
+    float[] vetor1 = new float[3]; //A questao pede vetores de 10 valore mas para fazer o teste mais rapido usarei 3
+    float[] vetor2 = new float[3];
+    //float[] vetor3 = new float[3]{};
+    
+    int i = 0;
+    
+    Console.WriteLine("SOMENTE VALORES EM ORDEM CRESCENTE!!!");
+    for(i = 0; i < 3; i++)
+    {
+    Console.WriteLine("Digite seus 3 valores do vetor 1, sendo esse o seu {0}° valor ", i + 1);
+    vetor1[i] = float.Parse(Console.ReadLine());
+        if(vetor1[i] < vetor1[i+1])
+        {
+          Console.WriteLine("Os valores não estão em oredem crescente, digite novamente.");
+          vetor1[i] = float.Parse(Console.ReadLine());
+        }            
+    }
+    for(i = 0; i < 3; i++)
+    {
+    Console.WriteLine("Digite seus 3 valores do vetor 2, sendo esse o seu {0}° valor ", i + 1);
+    vetor2[i] = float.Parse(Console.ReadLine());
+        if(vetor2[i] < vetor2[i+1])
+        {
+          Console.WriteLine("Os valores não estão em oredem crescente, digite novamente.");
+          vetor2[i] = float.Parse(Console.ReadLine());
+        }        
+    }
+
+ }
+}   
