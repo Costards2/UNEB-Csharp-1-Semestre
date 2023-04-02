@@ -31,13 +31,16 @@ namespace Jogo_da_velha
    private string nome;
    private string nomeIA;
    private int XouO;
+   private int score;
+   private int scoreIA;
    
    //Construtor
-   Jogador(string nome, string nomeIA, int XouO)
+   Jogador(string nome, string nomeIA, int XouO, int score, int scoreIA)
    {
      this.nome   = nome;
      this.nomeIA = nomeIA;
      this.XouO = XouO;
+     this.score = score;
    } 
 
    //Métodos GET
@@ -54,6 +57,15 @@ namespace Jogo_da_velha
     public int getXouO()
     {
         return(XouO);     
+    }
+    
+    public int getScore()
+    {
+        return(score);     
+    }
+     public int getScoreIA()
+    {
+        return(scoreIA);     
     }
 
    //Métodos SET
@@ -72,6 +84,16 @@ namespace Jogo_da_velha
         this.XouO = XouO;    
     }
     
+    public void setScore(int score)
+    {
+        this.score = score;    
+    }
+    
+    public void setScoreIA(int scoreIA)
+    {
+        this.scoreIA = scoreIA;    
+    }
+    
    //Destrutor
     
     ~Jogador()
@@ -83,12 +105,15 @@ namespace Jogo_da_velha
         
         string nome;
         string nomeIA;
+        int loop = 0;
+        int score = 0, scoreIA = 0;
         int XouO =0 , XouOIA = 0;
         int linha, coluna;
         int[,] matriz = new int[3,3];
         Random numlinha = new Random();
         Random numColuna = new Random();
         int linhaIA, colunaIA; 
+        
         try{
             
             Console.Write ("Qual o seu nome? ");
@@ -108,28 +133,21 @@ namespace Jogo_da_velha
             {
                 XouOIA = 1;
             }
-            Jogador jogador1 = new Jogador(nome, nomeIA, XouO); 
+            Jogador jogador1 = new Jogador(nome, nomeIA, XouO, score, scoreIA); 
        
             Console.WriteLine("\nO seu nome é: {0}", jogador1.getNome());
             Console.WriteLine("O nome de seu oponente é: {0}", jogador1.getNomeIA()); 
             Console.WriteLine("Você escolheu (X ou O): {0}\n", + jogador1.getXouO());
+            Console.WriteLine("Seu Score é: {0}", +jogador1.getScore());
+            Console.WriteLine("O Score de {0} é: {1}\n", jogador1.getNomeIA(), jogador1.getScoreIA());
+            
+            do
+            {
             
             for(int jogadas = 0; jogadas < 9; jogadas = 0 + 2 ){
-                
-            Console.Write("Se você ganhou digite '9' para encerrar o programa ao invés da linha da jogada.\n Se você perdeu digite '8' para encerrar o programa ao invés da linha da jogada.");
-            Console.Write("Qual linha sera sua jogada? ");
-            linha = int.Parse(Console.ReadLine());
             
-            if(linha == 9)
-            {
-                Console.Write("\nPARABÉNS PELA VITÓRIA!\nO PROGRAMA FOI ENCERRADO.");
-                break;
-            }
-            else if(linha == 8)
-            {
-               Console.Write("\nQUE PENA! MA PRÓXIMA VOCÊ CONSEGUE!\nO PROGRAMA FOI ENCERRADO.");
-                break; 
-            }
+            Console.Write("\nQual linha sera sua jogada? ");
+            linha = int.Parse(Console.ReadLine());
             
             Console.Write("Qual coluna sera sua jogada? ");
             coluna = int.Parse(Console.ReadLine());
@@ -193,8 +211,33 @@ namespace Jogo_da_velha
             
             Console.Write("\n");
         }
-            
+        
         }
+        
+            Console.WriteLine("Se você ganhou digite '9'.\nSe você perdeu digite '8'.\nPara encerrar o programa digite '7'.");
+            loop = int.Parse(Console.ReadLine());
+            
+            if(loop == 9)()
+            {
+                Console.WriteLine("\nPARABÉNS PELA VITÓRIA!\n");
+                score++;
+            }
+            else if(loop == 8)
+            {
+                Console.WriteLine("QUE PENA! MA PRÓXIMA VOCÊ CONSEGUE!\n");
+                scoreIA++;
+            }
+            else if(loop == 7)
+            {
+                Console.WriteLine("PROGRAMA ENCERRADO!");
+                break;
+            }
+            
+            Console.WriteLine("Seu Score é: {0}", score);
+            Console.WriteLine("O Score de {0} é: {1}\n", jogador1.getNomeIA(), scoreIA);
+        
+        }
+        while(loop != 7);
         
         }   catch(Exception erro){ 
             Console.WriteLine("Formato de entrada errado!\n");
