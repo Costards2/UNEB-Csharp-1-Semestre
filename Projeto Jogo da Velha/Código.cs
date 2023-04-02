@@ -84,9 +84,8 @@ namespace Jogo_da_velha
         string nome;
         string nomeIA;
         int XouO =0 , XouOIA = 0;
-        int linha;
-        int coluna;
-        int[,] matriz = new int[3,3]{{0,0,0}, {0,0,0}, {0,0,0}};
+        int linha, coluna;
+        int[,] matriz = new int[3,3];
         Random numlinha = new Random();
         Random numColuna = new Random();
         int linhaIA, colunaIA; 
@@ -111,32 +110,46 @@ namespace Jogo_da_velha
             }
             Jogador jogador1 = new Jogador(nome, nomeIA, XouO); 
        
-            Console.WriteLine("O seu nome é {0}", jogador1.getNome());
-            Console.WriteLine("O nome de seu oponente é {0}", jogador1.getNome() + " é: " + jogador1.getNomeIA()); 
-            Console.WriteLine("Você escolheu {0}", + jogador1.getXouO());
+            Console.WriteLine("\nO seu nome é: {0}", jogador1.getNome());
+            Console.WriteLine("O nome de seu oponente é: {0}", jogador1.getNomeIA()); 
+            Console.WriteLine("Você escolheu (X ou O): {0}\n", + jogador1.getXouO());
             
             for(int jogadas = 0; jogadas < 9; jogadas = 0 + 2 ){
-            
+                
+            Console.Write("Se você ganhou digite '9' para encerrar o programa ao invés da linha da jogada.\n Se você perdeu digite '8' para encerrar o programa ao invés da linha da jogada.");
             Console.Write("Qual linha sera sua jogada? ");
             linha = int.Parse(Console.ReadLine());
+            
+            if(linha == 9)
+            {
+                Console.Write("\nPARABÉNS PELA VITÓRIA!\nO PROGRAMA FOI ENCERRADO.");
+                break;
+            }
+            else if(linha == 8)
+            {
+               Console.Write("\nQUE PENA! MA PRÓXIMA VOCÊ CONSEGUE!\nO PROGRAMA FOI ENCERRADO.");
+                break; 
+            }
             
             Console.Write("Qual coluna sera sua jogada? ");
             coluna = int.Parse(Console.ReadLine());
             
+            linha--;
+            coluna--;
             
-            Console.Write("Jogando... ");
-             
+            Console.Write("\nJogando...\n");
+                    
             if(XouO == 1)
             {
-                matriz [linha,coluna] = 1;
+            matriz [linha,coluna] = 1;
             }
             else if (XouO == 2 )
             {
-                matriz [linha,coluna] = 2;
+            matriz [linha,coluna] = 2;
             }
             else
             {
-                matriz [linha,coluna] = 0;
+            matriz [linha,coluna] = 0;
             }
             
             do
@@ -158,31 +171,30 @@ namespace Jogo_da_velha
             {
                 matriz [linhaIA,colunaIA] = 0;
             }
-     
-            
-            Console.Write("Jogo da Velha: ");
+    
+            Console.Write("\nJogo da Velha:\n");
             
             for(int i = 0; i < 3; i++){ 
                 for(int j = 0; j < 3; j++){
-                    
-                    if(matriz[i,j] == 1)
-                    {
-                        Console.Write(" X ");
-                        Console.Write("\n");
-                    }
-                    else if(matriz[i,j] == 2)
-                    {
-                        Console.Write(" 0 ");
-                        Console.Write("\n");
-                    }
-                    else
-                    {
-                        Console.Write("   ");
-                        Console.Write("\n");
-                    }
+            
+            if(matriz[i,j] == 1)
+                {
+                    Console.Write(" X ");
+                }
+                else if(matriz[i,j] == 2)
+                {
+                    Console.Write(" O ");
+                }
+                else
+                {
+                    Console.Write("   ");
                 }
             }
-            }
+            
+            Console.Write("\n");
+        }
+            
+        }
         
         }   catch(Exception erro){ 
             Console.WriteLine("Formato de entrada errado!\n");
