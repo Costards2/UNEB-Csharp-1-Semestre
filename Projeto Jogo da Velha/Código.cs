@@ -214,20 +214,25 @@ namespace Jogo_da_velha
         
         }
         
-            Console.WriteLine("Se você ganhou digite '9'.\nSe você perdeu digite '8'.\nPara encerrar o programa digite '7'.");
+            Console.WriteLine("Se você ganhou digite '9'.\nSe você Empatou digite '8'.\nSe você perdeu digite '7'.\nPara encerrar o programa digite '7'.");
             loop = int.Parse(Console.ReadLine());
             
-            if(loop == 9)()
+            if(loop == 9)
             {
                 Console.WriteLine("\nPARABÉNS PELA VITÓRIA!\n");
                 score++;
             }
-            else if(loop == 8)
+             else if(loop == 8)
+            {
+                Console.WriteLine("EMPATE!\n");
+                scoreIA++;
+            }
+            else if(loop == 7)
             {
                 Console.WriteLine("QUE PENA! MA PRÓXIMA VOCÊ CONSEGUE!\n");
                 scoreIA++;
             }
-            else if(loop == 7)
+            else if(loop == 6)
             {
                 Console.WriteLine("PROGRAMA ENCERRADO!");
                 break;
