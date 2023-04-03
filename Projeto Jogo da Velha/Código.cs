@@ -144,9 +144,9 @@ namespace Jogo_da_velha
             do
             {
             
-            for(int jogadas = 0; jogadas < 9; jogadas = 0 + 2 ){
+            for(int jogadas = 0; jogadas <= 9; ){
             
-            Console.Write("\nQual linha sera sua jogada? ");
+            Console.Write("Qual linha sera sua jogada? ");
             linha = int.Parse(Console.ReadLine());
             
             Console.Write("Qual coluna sera sua jogada? ");
@@ -170,6 +170,8 @@ namespace Jogo_da_velha
             matriz [linha,coluna] = 0;
             }
             
+            jogadas = jogadas + 1;
+            
             do
             {
             linhaIA = numlinha.Next(0,2);
@@ -189,6 +191,8 @@ namespace Jogo_da_velha
             {
                 matriz [linhaIA,colunaIA] = 0;
             }
+            
+            jogadas = jogadas + 1;
     
             Console.Write("\nJogo da Velha:\n");
             
@@ -249,6 +253,6 @@ namespace Jogo_da_velha
             Console.WriteLine("Erro: " + erro.Message);
             }
         }
-}/*Main*/
+    }
 
-}/*Classe*/
+}
