@@ -112,9 +112,11 @@ namespace Jogo_da_velha
         int[,] matriz = new int[3,3];
         Random numlinha = new Random();
         Random numColuna = new Random();
-        int linhaIA, colunaIA; 
+        int linhaIA, colunaIA;
+        int jogadas = 0;
         
-        try{
+        try
+        {
             
             Console.Write ("Qual o seu nome? ");
             nome = Console.ReadLine();
@@ -144,79 +146,74 @@ namespace Jogo_da_velha
             do
             {
             
-            for(int jogadas = 0; jogadas <= 9; ){
-            
-            Console.Write("Qual linha sera sua jogada? ");
-            linha = int.Parse(Console.ReadLine());
-            
-            Console.Write("Qual coluna sera sua jogada? ");
-            coluna = int.Parse(Console.ReadLine());
-            
-            linha--;
-            coluna--;
-            
-            Console.Write("\nJogando...\n");
-                    
-            if(XouO == 1)
-            {
-            matriz [linha,coluna] = 1;
-            }
-            else if (XouO == 2 )
-            {
-            matriz [linha,coluna] = 2;
-            }
-            else
-            {
-            matriz [linha,coluna] = 0;
-            }
-            
-            jogadas = jogadas + 1;
-            
-            do
-            {
-            linhaIA = numlinha.Next(0,2);
-            colunaIA = numColuna.Next(0,2);
-            }
-            while(matriz[linhaIA,colunaIA] != 0);
-            
-            if(XouOIA == 1)
-            {
-                matriz [linhaIA,colunaIA] = 1;
-            }
-            else if (XouOIA == 2 )
-            {
-                matriz [linhaIA,colunaIA] = 2;
-            }
-            else
-            {
-                matriz [linhaIA,colunaIA] = 0;
-            }
-            
-            jogadas = jogadas + 1;
-    
-            Console.Write("\nJogo da Velha:\n");
-            
-            for(int i = 0; i < 3; i++){ 
-                for(int j = 0; j < 3; j++){
-            
-            if(matriz[i,j] == 1)
+                do
                 {
-                    Console.Write(" X ");
-                }
-                else if(matriz[i,j] == 2)
+                
+                Console.Write("Qual linha sera sua jogada? ");
+                linha = int.Parse(Console.ReadLine());
+                
+                Console.Write("Qual coluna sera sua jogada? ");
+                coluna = int.Parse(Console.ReadLine());
+                
+                linha--;
+                coluna--;
+                
+                Console.Write("\nJogando...\n");
+                        
+                if(XouO == 1)
                 {
-                    Console.Write(" O ");
+                matriz [linha,coluna] = 1;
                 }
-                else
+                else if (XouO == 2 )
                 {
-                    Console.Write("   ");
+                matriz [linha,coluna] = 2;
                 }
+                
+                jogadas = jogadas + 1;
+                
+                do
+                {
+                linhaIA = numlinha.Next(0,2);
+                colunaIA = numColuna.Next(0,2);
+                }
+                while((matriz[linhaIA,colunaIA] == 1) || (matriz[linhaIA,colunaIA] == 2));
+                
+                if(XouOIA == 1)
+                {
+                    matriz [linhaIA,colunaIA] = 1;
+                }
+                else if (XouOIA == 2 )
+                {
+                    matriz [linhaIA,colunaIA] = 2;
+                }
+                
+                jogadas = jogadas + 1;
+        
+                Console.Write("\nJogo da Velha:\n");
+                
+                for(int i = 0; i < 3; i++){ 
+                    for(int j = 0; j < 3; j++){
+                
+                if(matriz[i,j] == 1)
+                    {
+                        Console.Write(" X ");
+                    }
+                    else if(matriz[i,j] == 2)
+                    {
+                        Console.Write(" O ");
+                    }
+                    else
+                    {
+                        Console.Write("   ");
+                    }
+                }
+                
+                Console.Write("\n");
             }
-            
-            Console.Write("\n");
-        }
         
         }
+        while (jogadas != 9);
+        
         
             Console.WriteLine("Se você ganhou digite '9'.\nSe você Empatou digite '8'.\nSe você perdeu digite '7'.\nPara encerrar o programa digite '7'.");
             loop = int.Parse(Console.ReadLine());
@@ -244,15 +241,15 @@ namespace Jogo_da_velha
             
             Console.WriteLine("Seu Score é: {0}", score);
             Console.WriteLine("O Score de {0} é: {1}\n", jogador1.getNomeIA(), scoreIA);
+        }
+        while(loop != 6);
         
         }
-        while(loop != 7);
         
-        }   catch(Exception erro){ 
-            Console.WriteLine("Formato de entrada errado!\n");
-            Console.WriteLine("Erro: " + erro.Message);
-            }
+        catch(Exception erro){ 
+        Console.WriteLine("Formato de entrada errado!\n");
+        Console.WriteLine("Erro: " + erro.Message);
+        }
         }
     }
-
 }
