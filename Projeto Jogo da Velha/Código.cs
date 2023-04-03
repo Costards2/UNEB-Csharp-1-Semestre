@@ -173,10 +173,10 @@ namespace Jogo_da_velha
                 
                 do
                 {
-                linhaIA = numlinha.Next(0,2);
-                colunaIA = numColuna.Next(0,2);
+                linhaIA = numlinha.Next(0,3);
+                colunaIA = numColuna.Next(0,3);
                 }
-                while((matriz[linhaIA,colunaIA] == 1) || (matriz[linhaIA,colunaIA] == 2));
+                while((matriz[linhaIA,colunaIA] == 1) || (matriz[linhaIA,colunaIA] == 2) && (jogadas != 9));
                 
                 if(XouOIA == 1)
                 {
@@ -212,10 +212,10 @@ namespace Jogo_da_velha
             }
         
         }
-        while (jogadas != 9);
+        while (jogadas < 9);
         
         
-            Console.WriteLine("Se você ganhou digite '9'.\nSe você Empatou digite '8'.\nSe você perdeu digite '7'.\nPara encerrar o programa digite '7'.");
+            Console.WriteLine("\nSe você ganhou digite '9'.\nSe você Empatou digite '8'.\nSe você perdeu digite '7'.\nPara encerrar o programa digite '6'.");
             loop = int.Parse(Console.ReadLine());
             
             if(loop == 9)
