@@ -144,14 +144,29 @@ class propriedade {
     static void Main() {
 
 int opcao, num1, num2, num3;
-Console.WriteLine("escolha entre o numero 1, 2 ou 3"); opcao = int.Parse(Console.ReadLine()); Console.WriteLine("escreva um numero inteiro"); num1 = int.Parse(Console.ReadLine()); Console.WriteLine("escreva um numero inteiro"); num2 = int.Parse(Console.ReadLine()); Console.WriteLine("escreva um numero inteiro"); num3 = int.Parse(Console.ReadLine());
-switch (opcao) { case 1:
+Console.WriteLine("escolha entre o numero 1, 2 ou 3"); 
+opcao = int.Parse(Console.ReadLine()); 
+     
+Console.WriteLine("escreva um numero inteiro"); 
+num1 = int.Parse(Console.ReadLine()); 
+     
+Console.WriteLine("escreva um numero inteiro"); 
+num2 = int.Parse(Console.ReadLine()); 
+  
+Console.WriteLine("escreva um numero inteiro"); 
+num3 = int.Parse(Console.ReadLine());
+     
+switch (opcao) { 
+  
+case 1:
 Console.WriteLine($"A opção desejada foi: {num1}"); break;
 
- case 2:
+case 2:
 Console.WriteLine($"A opção desejada foi: {num2}"); break;
+
 case 3:
 Console.WriteLine($"A opção desejada foi: {num3}"); break;
+
 default:
 Console.WriteLine($"A opção desejada não foi encontrada"); break;
 } }
@@ -181,7 +196,8 @@ nota100 = int.Parse(Console.ReadLine());
    
 if ((nota1>=0) & (nota5>=0) & (nota10>=0) & (nota50>=0) & (nota100>0))
 { 
- total = nota1 + (nota5 * 5) + (nota10 * 10) + (nota50 * 50) + (nota100 * 100); Console.WriteLine($"tem {total} reis no bolo");
+ total = nota1 + (nota5 * 5) + (nota10 * 10) + (nota50 * 50) + (nota100 * 100); 
+ Console.WriteLine($"tem {total} reis no bolo");
 }
 else
 {
@@ -194,7 +210,8 @@ else
 {
 if((nota1>=0) & (nota5>=0) &(nota10>0))
 {
-total = nota1 + (nota5 * 5) + (nota10 * 10); Console.WriteLine($"tem {total} reis no bolo");
+total = nota1 + (nota5 * 5) + (nota10 * 10); 
+Console.WriteLine($"tem {total} reis no bolo");
 }
 else
 {
@@ -223,7 +240,8 @@ using System;
     Console.WriteLine("Digite seu dinheiro total : ");
     dinheiro = int.Parse(Console.ReadLine());
     
-    if (dinheiro >= 100){                                                
+    if (dinheiro >= 100)
+    {                                                
         //Para fazer essa questão vôce só precisava dessa parte do código :
         nota100 = dinheiro / 100;                                        
         nota50 = (dinheiro % 100) / 50;
@@ -233,34 +251,47 @@ using System;
         nota2 = (((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2;
         nota1 =((((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2) / 1;
         //Contudo eu fiz essa "complicação" para usar If e Else.
-    }else if (dinheiro >= 50 && dinheiro < 100){
+   }
+   else if (dinheiro >= 50 && dinheiro < 100)
+   {
         nota50 = dinheiro / 50;
         nota20 = ((dinheiro % 100) % 50) / 20;
         nota10 = (((dinheiro % 100) % 50) % 20) / 10;
         nota5 = ((((dinheiro % 100) % 50) % 20) % 10) / 5;
         nota2 = (((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2;
         nota1 =((((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2) / 1;
-    }else if (dinheiro >= 20 && dinheiro < 50){
+   }
+   else if (dinheiro >= 20 && dinheiro < 50)
+   {
         nota20 = dinheiro / 20;
         nota10 = (((dinheiro % 100) % 50) % 20) / 10;
         nota5 = ((((dinheiro % 100) % 50) % 20) % 10) / 5;
         nota2 = (((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2;
-        nota1 =((((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2) / 1;
-    }else if (dinheiro >= 10 && dinheiro < 20){
+        nota1 =((((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2) / 1; 
+   }
+   else if (dinheiro >= 10 && dinheiro < 20)
+   {
         nota10 = dinheiro / 10;
         nota5 = ((((dinheiro % 100) % 50) % 20) % 10) / 5;
         nota2 = (((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2;
         nota1 =((((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2) / 1;
-    }else if (dinheiro >= 5 && dinheiro < 10){
+    
+   }
+   else if (dinheiro >= 5 && dinheiro < 10)
+   {
         nota5 = dinheiro / 5;
         nota2 = (((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2;
         nota1 =((((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2) / 1;
-    }else if (dinheiro >= 2 && dinheiro < 5){
+   }
+   else if (dinheiro >= 2 && dinheiro < 5)
+   {
         nota2 = dinheiro / 2;
         nota1 =((((((dinheiro % 100) % 50) % 20) % 10) % 5) / 2) / 1;
-    }else{ 
+   }
+   else
+   { 
         nota1 = dinheiro / 1;
-    }
+   }
     
     Console.WriteLine("Notas de 100 : " + nota100);
     Console.WriteLine("Notas de 50 : " + nota50);
