@@ -115,34 +115,36 @@ public class Jogador
         Random numColuna = new Random();
         int linhaIA, colunaIA;
         int jogadas = 0;
+        char simbolo = 'A';
 
         try
         {
 
-            Console.Write("Qual o seu nome? ");
+            Console.WriteLine("Qual o seu nome? ");
             nome = Console.ReadLine();
 
-            Console.Write("Qual o nome de seu oponente? ");
+            Console.WriteLine("Qual o nome de seu oponente? ");
             nomeIA = Console.ReadLine();
 
-            Console.Write("Você quer X ou O (Digite 1 para X ou 2 para 0)? ");
+            Console.WriteLine("Você quer X ou O (Digite 1 para X ou 2 para 0)? ");
             XouO = int.Parse(Console.ReadLine());
 
             if (XouO == 1)
             {
                 XouOIA = 2;
+                simbolo = 'X';
             }
             else if (XouO == 2)
             {
                 XouOIA = 1;
+                simbolo = '0';
             }
+
             Jogador jogador1 = new Jogador(nome, nomeIA, XouO, score, scoreIA);
 
             Console.WriteLine("\nO seu nome é: {0}", jogador1.getNome());
             Console.WriteLine("O nome de seu oponente é: {0}", jogador1.getNomeIA());
-            Console.WriteLine("Você escolheu (X ou O): {0}\n", +jogador1.getXouO());
-            Console.WriteLine("Seu Score é: {0}", +jogador1.getScore());
-            Console.WriteLine("O Score de {0} é: {1}\n", jogador1.getNomeIA(), jogador1.getScoreIA());
+            Console.WriteLine($"Você escolheu: {simbolo}\n");
 
             do
             {
@@ -346,9 +348,15 @@ public class Jogador
                 }
                 while (jogadas < 9);
 
+                jogadas = 0;
+
+                Console.WriteLine("Seu Score é: {0}", +jogador1.getScore());
+                Console.WriteLine("O Score de {0} é: {1}\n", jogador1.getNomeIA(), jogador1.getScoreIA());
 
                 Console.WriteLine("Para encerrar o programa digite '6', caso queira continuar digite qualquer outro numero.");
                 loop = int.Parse(Console.ReadLine());
+
+                Array.Clear(matriz, 0, matriz.Length);
 
             }
             while (loop != 6);
